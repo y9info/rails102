@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  short_name: MyString
+  origin: MyString
+  sq: MyString
+  level: MyString
+  full_name: MyString
+  linkman: MyString
+  address: MyText
+  phone: MyString
+  fax: MyString
+  mobile: MyString
+  email: MyString
+  website: MyString
+  main_purchase: MyString
+  track_result: MyText
+  note: MyText
+
+two:
+  short_name: MyString
+  origin: MyString
+  sq: MyString
+  level: MyString
+  full_name: MyString
+  linkman: MyString
+  address: MyText
+  phone: MyString
+  fax: MyString
+  mobile: MyString
+  email: MyString
+  website: MyString
+  main_purchase: MyString
+  track_result: MyText
+  note: MyText

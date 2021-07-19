@@ -1,0 +1,44 @@
+
+<div class="blog-author d-flex align-items-center">
+    <%= image_tag("avatar-2.png", class:"rounded-circle float-left") %>
+    <div>
+        <h4><%= @track.customer.linkman %></h4>
+        <div class="row">
+            <ul class="list-group list-group-flush col-6">
+                <li class="list-group-item "><%= @track.customer.full_name %></li>
+                <li class="list-group-item ">采购：<%= @track.customer.main_purchase %></li>
+                <li class="list-group-item ">SQ号：<%= @track.customer.sq %></li>
+            </ul>
+            <ul class="list-group list-group-flush col-6">
+                <li class="list-group-item ">电话：<%= @track.customer.phone %></li>
+                <li class="list-group-item ">邮箱：<%= @track.customer.email %></li>
+                <li class="list-group-item ">手机：<%= @track.customer.mobile %></li>
+            </ul>
+            <p><%= @customer.address %></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="blog-comments">
+        <div class="entry-meta ">
+            <%= link_to"点此查阅该客户全部#{@customer.tracks.size }条跟踪记录", customer_tracks_path %>
+        </div> 
+       <div class="comment">
+        <div class="d-flex">
+            <div class="comment-img"><%= image_tag("comments-3.jpg")%></div>
+            <div>
+            <h5><a href="<%= edit_customer_track_path %>"><%= image_tag("tab-images/edt.gif")%><%= @track.title %></a> </h5>
+            <time><%= @track.date %></time>
+            <div class="mb-3">
+                跟进内容：<%= @track.content %>
+            </div>
+            <p>
+                跟进结果：<%= @track.result %>
+            </p></div>
+        </div>
+    </div>
+</div>
+    <div class="read-more">
+      <%= link_to '增加新记录', new_customer_track_path %>
+    </div>

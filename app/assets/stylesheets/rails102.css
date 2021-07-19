@@ -1,0 +1,38 @@
+
+
+/* login居中对齐 的css样式 */
+.login-box {
+  margin: 0 25%;
+  background: #fff;
+}
+
+
+/* login居中对齐 的css样式 */
+
+.edit-form {
+  width: 30%;
+  padding-left: 10%;
+}
+
+
+/* 表格的css样式 */
+.img-profile{
+    width: 30%;
+    z-index: 1000;
+    position: inherit;
+    margin-top: 20px;
+    padding: 4px;
+}
+
+.profile-info{
+  padding: 25px 10px 10px;
+  width: 65%;
+  float: left;
+}
+
+/* 表格的css样式 */
+
+
+ 
+
+ 

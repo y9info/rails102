@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="description" content="CRM">
+  <meta name="author" content="Yunjiu Info">
+  <%# <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal"> %>
+  <%= favicon_link_tag image_path("favicon.ico") %>
+  <title>Rails102</title>
+</head>
+
+<body>
+    <%= render "common/top-header" %> 
+    <%= render "common/header-nav" %> 
+    <%= render "common/bread-split-nav" %> 
+
+  <main id="main">
+
+
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-12 entries">
+
+            <article class="entry">
+
+              <%# <div class="entry-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div> %>
+
+              <%# <h2 class="entry-title">
+                <a href="blog-single.html">客户列表</a>
+              </h2> %>
+
+            <div class="entry-meta">
+              <ul>
+               <% if current_user %>
+                    <li><%= link_to" 点此查阅您的全部#{current_user.customers.size}个客户",customers_path %></li> 
+                <% end %> 
+                <li><%= current_user ? "当前销售人员：#{current_user.email}" : "您尚未登录系统" %></li>
+                <li ><time datetime="<%= Date.today %>"><%= Date.today %></time></li>
+              </ul>
+            </div>
+              <div class="entry-content">
+                <%= yield %>
+              </div>
+
+            </article><!-- End blog entry -->
+
+           
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+              </ul>
+            </div>
+
+          <%# </div><!-- End blog entries list -->
+
+          <%= render "common/sidebar" %>
+
+        <%# </div> %> 
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+  <%= render "common/footer" %>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+</body>
+
+</html>

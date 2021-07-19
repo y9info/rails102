@@ -1,0 +1,48 @@
+<%= form_for [@customer,@track] do |form| %>
+    <% if @track.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@track.errors.count, "error") %> prohibited this track from being saved:</h2>
+        <ul>
+        <% @track.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <div class="blog-author align-items-center">
+        <div class="reply-form">
+            <h4>客户跟踪记录</h4>
+            <p>客户跟踪记录情况仅本人和管理员权限可以查阅 * </p>
+        
+            <div class="row">
+                <div class="col-6  mb-3">
+                    <%= form.label :记录标题 %>
+                    <%= form.text_field :title, class:"form-control",placeholder:"输入标题*" %>
+                </div>
+
+                <div class="col-6  mb-3">
+                    <%= form.label :跟进日期 %>
+                    <%= form.date_field :date, class:"form-control" %>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="mb-3">
+                    <%= form.label :跟进内容 %>
+                    <%= form.text_area :content, class:"form-control", rows:"5", placeholder:"输入本次跟进客户的主要内容及交流情况*" %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3">
+                    <%= form.label :反馈及结果 %>
+                    <%= form.text_area :result, class:"form-control", rows:"5", placeholder:"客户反馈及跟进结果情况*" %>
+                </div>
+            </div>
+            
+            <%= form.submit "提交",class: "btn btn-primary col-12 " %>
+        </div>
+    </div>
+<% end %>
+

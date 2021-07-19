@@ -1,0 +1,24 @@
+<div class="blog-author d-flex align-items-center">
+    <%= image_tag("avatar-2.png", class:"rounded-circle float-left") %>
+    <div>
+        <h4><%= @customer.linkman %></h4>
+        <div class="row">
+            <ul class="list-group list-group-flush col-6">
+                <li class="list-group-item "><%= @customer.full_name %></li>
+                <li class="list-group-item ">采购：<%= @customer.main_purchase %></li>
+                <li class="list-group-item ">SQ号：<%= @customer.sq %></li>
+            </ul>
+            <ul class="list-group list-group-flush col-6">
+                <li class="list-group-item ">电话：<%= @customer.phone %></li>
+                <li class="list-group-item ">邮箱：<%= @customer.email %></li>
+                <li class="list-group-item ">手机：<%= @customer.mobile %></li>
+            </ul>
+            <p><%= @customer.address %></p>
+        </div>
+    </div>
+</div>
+
+<%= render 'form' %>
+
+
+ <%= link_to '返回', customers_path %>

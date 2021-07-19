@@ -1,0 +1,151 @@
+
+   <div class="container">
+   
+    <%= form_with(model: customer) do |form| %>
+      <% if customer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+          <ul>
+            <% customer.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+            <div class="col-lg-8  login-box ">
+
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col-sm-2">
+								<h6 class="mb-0"><%= form.label :客户简称 %>*</h6>
+							</div>
+							<div class="col-sm-9 text-secondary">
+								<%= form.text_field :short_name, class: "form-control" %>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-sm-2">
+								<h6 class="mb-0"><%= form.label :来源 %>*</h6>
+							</div>
+							<div class="col-sm-9 text-secondary">
+								<%= form.text_field :origin, class: "form-control" %>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-sm-2">
+								<h6 class="mb-0"><%= form.label :SQ号码 %></h6>
+							</div>
+							<div class="col-sm-9 text-secondary">
+								<%= form.text_field :sq, class: "form-control" %>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-sm-2">
+								<h6 class="mb-0"><%= form.label :客户等级 %>*</h6>
+							</div>
+							<div class="col-sm-9 text-secondary">
+							<%= form.text_field :level, class: "form-control" %>
+							</div>
+						</div>
+					<div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :客户全称 %>*</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :full_name, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :客户联系人 %>*</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :linkman, class: "form-control" %>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :客户地址 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :address, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :电话号码 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :phone, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :传真 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+								<%= form.text_field :fax, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :手机号 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :mobile, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :邮箱 %>*</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :email, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :网址 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_field :website, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :主要采购产品 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+						<%= form.text_field :main_purchase, class: "form-control" %>  
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :跟踪结果 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_area :track_result, class: "form-control" %>
+						</div>
+					</div>
+                    <div class="row mb-3">
+						<div class="col-sm-2">
+							<h6 class="mb-0"><%= form.label :备注 %></h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<%= form.text_area :note, class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-2"></div>
+							<div class="col-sm-9 text-secondary">
+								<div class="actions">
+									<%= form.submit "提交", class: "btn btn-primary col-12" %>
+								</div>
+						</div>
+					</div>
+
+                  <% end %>
+	</div>

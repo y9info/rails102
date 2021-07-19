@@ -1,0 +1,44 @@
+
+<div class="container-fluid">
+<table class="table border border-success caption-top table-bordered">
+  <caption>	你当前的位置：[主页]-[客户列表]</caption>
+  <thead>
+    <tr class="text-center">
+      <th>序号</th>
+      <th>客户简称</th>
+      <th>来源</th>
+      <th>SQ号码</th>
+      <th>类别</th>
+      <th>联系人</th>
+      <th>邮箱</th>
+      <th>最近跟进</th>
+      <th colspan="2">操作</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    <% i=0 %>
+    <% @my_customers.each do |customer| %>
+      <% i=i+1 %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= link_to customer.short_name,customer %></td>
+        <td><%= customer.origin %></td>
+        <td><%= customer.sq %></td>
+        <td><%= customer.level %></td>
+        <td><%= customer.linkman %></td>
+        <td><a href="mailto:<%= customer.email %>" ><%= customer.email %></a></td>
+        <%# 三元运算符 %>
+        <td><%= customer.latest_track_title == "零记录"? (link_to "零",new_customer_track_path(customer)) :(link_to customer.latest_track_title, customer_tracks_path(customer),title:customer.tracks[0].content) %></td>  
+        <td><%= image_tag("tab-images/del.gif")%><%= link_to '删除', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+    <div class="read-more">
+      <%= link_to '新增客户', new_customer_path %>
+    </div>
+</div>
+
